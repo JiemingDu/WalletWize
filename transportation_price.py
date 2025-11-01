@@ -1,6 +1,8 @@
 ''' 
 assuming we have address of the user
 and there university
+
+call get_<transportation_name>_price() to get the prices
 '''
 import re
 
@@ -115,7 +117,7 @@ tarif = {
     'ABCD' : 165.25
 }
 
-def get_STM_price(address, skl_add):
+def get_stm_price(address, skl_add):
     '''input: 
         address: standard address notation of user's home (ex: '98 Croissant des Trèfles, L'Île-Perrot, QC J7V 2G2')
         skl_add: address of the school the user attends
@@ -134,9 +136,6 @@ def get_STM_price(address, skl_add):
         my_tarif = tarif['A']
     return my_tarif
 
-
-    
-
 def get_zone(address):
     add_city = address.split(', ')[1]
     try:
@@ -153,6 +152,7 @@ def get_zone(address):
         print(e)
         raise NameError("There is no Montreal public transportation available near this address")
     
+def
 #print(get_zone("2401 Rue Workman, Montréal, QC H3J 2N3"))
 if __name__ == "main":
     print(get_STM_price('1287 Rue Ropery, Montréal, QC H3K 2X1', "98 Croissant des Trèfles, L'Île-Perrot, QC J7V 2G2"))
