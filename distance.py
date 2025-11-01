@@ -19,9 +19,9 @@ def get_distance(origin, destination):
     return distance, duration
 
 if __name__ == "__main__":
-    # Addresses
-    origin = "McGill University, Montreal, QC"
+    origin = "845 Sherbrooke St W, Montreal, Quebec H3A 0G4"
     destination = "University of Toronto, ON"
     distance, duration = get_distance(origin, destination)
     print(f"Distance: {distance}, Duration: {duration}")
+    print(type(distance))
 

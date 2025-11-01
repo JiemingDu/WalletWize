@@ -4,7 +4,7 @@ and there university
 
 call get_<transportation_name>_price() to get the prices
 '''
-
+import distance
 
 A_cities = [
         "Baie-D'Urfé",
@@ -116,6 +116,18 @@ tarif = {
     'ABCD' : 165.25
 }
 
+
+def get_monthly_gas_price(home_address, school_address, km_per_litre, fuel_price):
+    '''
+    dist: in km
+    fuel_price in $/litre
+    '''
+    dist, time = distance.get_distance(home_address, school_address)
+    print('distance is',dist)
+    float_dist = float(dist.split()[0])
+    daily_price = 2*float_dist/km_per_litre*fuel_price
+    return round(30*daily_price, 2)
+
 def get_stm_price(address, skl_add):
     '''input: 
         address: standard address notation of user's home (ex: '98 Croissant des Trèfles, L'Île-Perrot, QC J7V 2G2')
@@ -155,8 +167,13 @@ def get_bixi_price():
     return 23
 
 #print(get_zone("2401 Rue Workman, Montréal, QC H3J 2N3"))
-if __name__ == "main":
+if __name__ == "__main__":
     print(get_stm_price('1287 Rue Ropery, Montréal, QC H3K 2X1', "98 Croissant des Trèfles, L'Île-Perrot, QC J7V 2G2"))
+    origin = "845 Sherbrooke St W, Montreal, Quebec H3A 0G4"
+    destination = "525 Avenue 74, Laval, QC H7V 2X9"
+    KM_PER_LITRE = 20.2
+    FUEL_PRICE = 1.501
+    print('gas price is', get_monthly_gas_price(origin, destination, KM_PER_LITRE, FUEL_PRICE))
         
 
 
