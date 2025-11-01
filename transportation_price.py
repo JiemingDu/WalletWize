@@ -151,11 +151,13 @@ def get_zone(address):
     except NameError as e:
         print(e)
         raise NameError("There is no Montreal public transportation available near this address")
-    
-def
+
+def get_bixi_price():
+    return 23
+
 #print(get_zone("2401 Rue Workman, Montréal, QC H3J 2N3"))
 if __name__ == "main":
-    print(get_STM_price('1287 Rue Ropery, Montréal, QC H3K 2X1', "98 Croissant des Trèfles, L'Île-Perrot, QC J7V 2G2"))
+    print(get_stm_price('1287 Rue Ropery, Montréal, QC H3K 2X1', "98 Croissant des Trèfles, L'Île-Perrot, QC J7V 2G2"))
         
 
 
