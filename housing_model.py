@@ -13,9 +13,9 @@ def train_evaluate_and_predict():
 
     df["Year"] = df["datetime"].dt.year
 
-    current_sys_year = pd.Timestamp.now().year
+    current_year = pd.Timestamp.now().year
 
-    df.loc[df["Year"] > current_sys_year, "Year"] -= 100
+    df.loc[df["Year"] > current_year, "Year"] -= 100
 
     # Group by year
     annual_df = df.groupby("Year")["Index"].mean().reset_index()
@@ -36,11 +36,9 @@ def train_evaluate_and_predict():
     predictions_test = model.predict(X_test)
 
     accuracy = r2_score(y_test, predictions_test)
-    print(f"--- Model Accuracy (R2 Score): {accuracy:.4f} ---")
 
     model_final = LinearRegression()
     model_final.fit(X, y)
-    print("--- Re-trained model on ALL data for final forecast ---")
 
     # Base the future years on the latest year found in the file
     start_year = latest_year + 1
@@ -50,7 +48,6 @@ def train_evaluate_and_predict():
 
     future_predictions = model_final.predict(X_future)
 
-    print(f"--- Generated predictions for the next 20 years: {future_years_list} ---")
 
     # This combines the future years and the predicted CPI values into a table
     future_df = pd.DataFrame({
@@ -60,10 +57,7 @@ def train_evaluate_and_predict():
 
     future_df['predicted_cpi'] = future_df['predicted_cpi'].round(1)
 
-    print("\n--- Model Predictions for Future CPI ---")
 
     return future_df
-
-future_df = train_evaluate_and_predict()
 
 
