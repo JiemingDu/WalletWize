@@ -4,7 +4,7 @@ and there university
 
 call get_<transportation_name>_price() to get the prices
 '''
-import re
+
 
 A_cities = [
         "Baie-D'Urfé",
@@ -15,7 +15,6 @@ A_cities = [
         "Hampstead",
         "Kirkland",
         "L'Île-Dorval",
-        "Municipalités dans la zone A",
         "Montréal",
         "Montréal-Est",
         "Montréal-Ouest",
