@@ -41,8 +41,8 @@ def train_evaluate_and_predict():
     model_final.fit(X, y)
 
     # Base the future years on the latest year found in the file
-    start_year = latest_year + 1
-    future_years_list = list(range(start_year, start_year + 5)) # e.g., if 2025 is latest, this is [2026, 2027, ... 2045]
+    start_year = latest_year
+    future_years_list = list(range(start_year, start_year + 6)) # e.g., if 2025 is latest, this is [2025, 2026, 2027, 2028, 2029, 2030]
 
     X_future = pd.DataFrame(future_years_list, columns=["Year"])
 
