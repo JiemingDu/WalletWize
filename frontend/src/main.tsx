@@ -1,17 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Questionnaire from './pages/Questionnaire'
-import App from './App' // (keep as a test page if you want)
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
-const router = createBrowserRouter([
-  { path: '/', element: <Questionnaire /> },
-  { path: '/test', element: <App /> }, // optional test route
-])
+// If you renamed files, pick ONE to render (Questionnaire or App)
+import Questionnaire from "./pages/Questionnaire";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <Questionnaire />
+  </React.StrictMode>
+);

@@ -3,72 +3,42 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Component-level utility bundles (safe to @apply real Tailwind classes) */
+@layer components {
+  /* generic input */
+  .ww-field {
+    @apply w-full rounded-xl border border-slate-300 bg-white
+           px-3 py-2 sm:py-3 text-[15px] sm:text-base
+           outline-none focus:ring-2 focus:ring-indigo-500/40
+           focus:border-indigo-500 transition-colors;
   }
-  a:hover {
-    color: #747bff;
+
+  /* select gets the same base as inputs */
+  .ww-select {
+    @apply w-full rounded-xl border border-slate-300 bg-white
+           px-3 py-2 sm:py-3 text-[15px] sm:text-base
+           outline-none focus:ring-2 focus:ring-indigo-500/40
+           focus:border-indigo-500 transition-colors;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .ww-label {
+    @apply text-[0.8rem] uppercase tracking-[0.22em] text-slate-600;
   }
-} */
+
+  .ww-button {
+    @apply bg-[#574fa9] hover:bg-[#4e46a0] active:bg-[#463f8c]
+           text-white px-6 py-3 font-semibold tracking-[0.08em]
+           rounded-xl shadow focus:outline-none focus:ring-2
+           focus:ring-[#574fa9]/40 transition-colors;
+  }
+}
+
+/* Slightly larger base text across the form (optional) */
+html, body, #root {
+  font-size: 18px;     /* bump base from 16px */
+  line-height: 1.4;
+}
+
+html, body, #root {
+  font-family: "Jersey 10", monospace;
+}
