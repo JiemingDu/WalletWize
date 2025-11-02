@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
-\
+
 def train_evaluate_and_predict():
 
     df = pd.read_csv("CPI_housing.csv")
