@@ -21,7 +21,7 @@ print("-" * 50)
 # --- Step 2: Try a few sample predictions ---
 
 examples = [
-    dict(year=2028, eating_out="never", store_type="Maxi", weekly_grocery_budget=150.0),
+    dict(year=2025, eating_out="3-5x", store_type="Maxi", weekly_grocery_budget=150.0),
     dict(year=2030, eating_out="3-5x", store_type="Walmart", weekly_grocery_budget=180.0),
     dict(year=2035, eating_out="daily", store_type="Metro", weekly_grocery_budget=220.0),
 ]
